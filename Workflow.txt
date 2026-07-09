@@ -1,1 +1,21 @@
 Workflow 
+
+Variable        Purpose
+capacity        Maximum Tokens
+tokens          Current Available tokens
+refillRate      Token added per second
+lastRefillTime  Last time we updated the bucket
+
+
+Responsibilites of bucket
+1. Create itself
+2. Refill token based on elapsed time.
+3. Consume a token if Available.
+4. Report remaining tokens.
+
+
+
+We are going to implement the "lazy refill" approach, 
+Lazy refill approach means instead of checking to refill the bucket after certain interval of time.
+We are going to see the current token in bucket and check the last elapsedTime [when was the last request in sec] then multiply it with refill refillRate
+
